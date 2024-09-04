@@ -1,38 +1,63 @@
-.App {
-  text-align: center;
+:root {
+  --border-color: #368f95;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App,
+.board {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  background: rgba(14, 142, 154, 0.82);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  height: 600px;
+}
+
+.board {
+  width: 600px;
+  height: 400px;
+}
+
+.row {
+  display: flex;
+  width: 18rem;
+}
+
+.square {
+  height: 6rem;
+  width: 6rem;
+
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.winner {
+  position: fixed;
+  top: 2rem;
+  left: 45%;
+  font-size: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.square:nth-child(2) {
+  border-left: 4px solid var(--border-color);
+  border-right: 4px solid var(--border-color);
+}
+
+.row:nth-child(2) {
+  border-top: 4px solid var(--border-color);
+  border-bottom: 4px solid var(--border-color);
 }
